@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <!-- Typography: Playfair Display (display) + Lato (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Step 1: External stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Step 1: Embedded style – body background -->
+    <style>
+        body {
+            background-color: #f8f5ee;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+            background-repeat: repeat;
+        }
+        #welcomeBanner {
+            background: transparent;
+            padding: 10px 0;
+            border-radius: 0;
+        }
+        .spinner {
+            border: 4px solid #e4f0ea;
+            border-top: 4px solid #2d6a4f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main JS -->
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#bulletin">Bulletin</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section id="home">
+            <header id="mainHeader">
+                <div id="welcomeBanner">
+                    <!-- Step 1: Inline style heading – updated to amber gold -->
+                    <h1 style="color: #e9b84a; font-family: 'Playfair Display', Georgia, serif; font-size: 2.4em; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                        Welcome to the Community Portal!
+                    </h1>
+                    <p>Register today and get a <span style="color: #e9b84a; font-weight: bold;">Special 10% Discount</span> on paid events!</p>
+                    <p class="highlight" style="display: inline-block; margin-top: 10px;">Join our community and stay updated with the latest events.</p>
+                </div>
+            </header>
+
+            <!-- Geolocation -->
+            <div style="text-align: center; margin-top: 30px;">
+                <h2>Find Events Near You</h2>
+                <button id="geoBtn">Find Nearby Events</button>
+                <p id="geoOutput" style="margin-top: 10px; font-weight: bold; color: #2d6a4f;"></p>
+            </div>
+        </section>
+
+        <!-- Bulletin -->
+        <section id="bulletin">
+            <h2>Community Bulletin</h2>
+            <div class="news-article">
+                <p>Welcome to our monthly community bulletin! We have some exciting news for all residents. The local council has approved the new park renovation project, which will commence next month. This project aims to bring more green spaces and recreational facilities to our neighborhood. We encourage everyone to participate in the upcoming town hall meeting to share your thoughts.</p>
+                <p>In other news, our annual summer festival is just around the corner! Volunteers are needed for various activities including stall management, crowd control, and event setup. This is a great opportunity to give back to the community and meet new people. Please sign up using the contact form below if you are interested in volunteering. Let's make this year's festival the best one yet!</p>
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section id="events">
+            <h2>Past Community Events</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Browse events or filter by category.</p>
+
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="text" id="searchInput" placeholder="Search events by name..." style="padding: 9px 14px; width: 250px; border: 1px solid #d4c9a8; border-radius: 5px; font-family: 'Lato', sans-serif;">
+                <select id="categoryFilter" style="padding: 9px 12px; margin-left: 10px; border: 1px solid #d4c9a8; border-radius: 5px; font-family: 'Lato', sans-serif;">
+                    <option value="all">All Categories</option>
+                    <option value="Music">Music</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Food">Food</option>
+                    <option value="Art">Art</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+
+            <!-- HTML Task 4: Image gallery table – 2 rows × 3 columns -->
+            <table class="gallery-table">
+                <caption>A glimpse of our past community gatherings</caption>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=300&h=180&fit=crop" alt="Summer Music Fest – outdoor concert crowd" title="Summer Music Fest" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Summer Music Fest</p>
+                        </td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=180&fit=crop" alt="Community Sports Day – track and field event" title="Community Sports Day" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Community Sports Day</p>
+                        </td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300&h=180&fit=crop" alt="Food and Culture Fair – street food stalls" title="Food &amp; Culture Fair" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Food &amp; Culture Fair</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=300&h=180&fit=crop" alt="Art in the Park – painting exhibition outdoors" title="Art in the Park" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Art in the Park</p>
+                        </td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=300&h=180&fit=crop" alt="Tech Meetup – people at a technology conference" title="Tech Meetup 2025" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Tech Meetup 2025</p>
+                        </td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=300&h=180&fit=crop" alt="Education Workshop – classroom learning session" title="Education Workshop" class="gallery-img" ondblclick="this.classList.toggle('enlarged')">
+                            <p class="img-caption">Education Workshop</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align:center; font-size:0.82em; color:#6b6452; margin: 6px 0 22px;">💡 Double-click any image to enlarge it</p>
+
+            <div id="loadingSpinner" style="display:none; text-align:center;">
+                <div class="spinner"></div>
+                <p>Loading events...</p>
+            </div>
+
+            <div id="eventsContainer" class="gallery-container"></div>
+        </section>
+
+        <!-- Admin Table -->
+        <section id="schedule">
+            <h2>Events Admin Table</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Event Name</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aug 15, 2026</td>
+                        <td>Town Hall Meeting</td>
+                        <td>Community Center</td>
+                        <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Aug 22, 2026</td>
+                        <td>Summer Festival</td>
+                        <td>Central Park</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Sep 05, 2026</td>
+                        <td>Charity Drive</td>
+                        <td>Main Square</td>
+                        <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Sep 12, 2026</td>
+                        <td>Tech Meetup</td>
+                        <td>Library</td>
+                        <td>Cancelled</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Promo Video -->
+        <section id="promo" style="text-align: center;">
+            <h2>Event Promo Video</h2>
+            <video width="600" controls oncanplay="document.getElementById('videoMsg').innerText='Video ready to play!'">
+                <source src="competition.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            <p id="videoMsg" style="color: #2d6a4f; font-weight: bold; margin-top: 10px;"></p>
+        </section>
+
+        <!-- Contact / Registration -->
+        <section id="contact">
+            <h2>Event Registration</h2>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <button id="clearPrefsBtn">Clear Preferences</button>
+            </div>
+
+            <form id="regForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="E.g., Jane Doe" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onblur="(function(el){ var err=document.getElementById('phoneError'); if(el.value.length>0 && el.value.length<10){err.style.display='block';}else{err.style.display='none';} })(this)">
+                    <span id="phoneError" style="color:#c0392b; display:none; font-size: 0.9em;">Please enter at least 10 digits.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Event Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type:</label>
+                    <select id="eventType" name="eventType">
+                        <option value="">--Select Event--</option>
+                        <option value="free">Free Community Event</option>
+                        <option value="paid_10">Paid Workshop ($10)</option>
+                        <option value="paid_50">Gala Dinner ($50)</option>
+                    </select>
+                    <p id="feeDisplay" style="color: #2d6a4f; font-weight: bold; margin-top: 5px;"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message/Feedback:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Share your thoughts or feedback..."></textarea>
+                    <div id="charCount" style="font-size: 0.85em; color: #6b6452; margin-top: 5px;">Characters: 0</div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="cta-button">Register Now</button>
+                <br><br>
+                <output id="formOutput" style="color: #2d6a4f; font-weight: bold; display: block; text-align: center;"></output>
+            </form>
+
+            <!-- Layout Control Test -->
+            <div style="margin-top: 20px; padding: 15px; background: #f0ebe0; border: 1px solid #d4c9a8; border-radius: 6px;">
+                <h3 style="margin-bottom: 10px; color: #1b4332;">Layout Control Test</h3>
+                <p>This is a normal paragraph.</p>
+                <p class="hidden-visibility">This text has <code>visibility: hidden</code>. It takes up space but you can't see it.</p>
+                <p class="hidden-display">This text has <code>display: none</code>. It is completely removed from the document flow.</p>
+                <p>This is another normal paragraph below the hidden ones.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Bringing our community together through shared events, experiences, and local connections.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="help.html" target="_blank">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-socials">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Local Community Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

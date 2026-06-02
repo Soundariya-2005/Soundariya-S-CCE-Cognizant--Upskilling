@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Summer Music Festival",
+    "category": "Music",
+    "date": "2026-08-15",
+    "seats": 50,
+    "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400",
+    "description": "Enjoy live music performances from local bands and artists."
+  },
+  {
+    "id": 2,
+    "name": "Community Sports Day",
+    "category": "Sports",
+    "date": "2026-08-22",
+    "seats": 40,
+    "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400",
+    "description": "Participate in exciting sports and outdoor activities."
+  },
+  {
+    "id": 3,
+    "name": "Food & Culture Fair",
+    "category": "Food",
+    "date": "2026-09-01",
+    "seats": 30,
+    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400",
+    "description": "Taste delicious local foods and explore cultural exhibits."
+  },
+  {
+    "id": 4,
+    "name": "Art in the Park",
+    "category": "Art",
+    "date": "2026-09-10",
+    "seats": 25,
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=400",
+    "description": "Outdoor art exhibition featuring community artists."
+  },
+  {
+    "id": 5,
+    "name": "Tech Meetup 2026",
+    "category": "Technology",
+    "date": "2026-09-18",
+    "seats": 60,
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
+    "description": "Networking and learning session for technology enthusiasts."
+  },
+  {
+    "id": 6,
+    "name": "Education Workshop",
+    "category": "Education",
+    "date": "2026-09-25",
+    "seats": 35,
+    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400",
+    "description": "Interactive workshop focused on lifelong learning and skills."
+  }
+]

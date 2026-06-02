@@ -1,0 +1,572 @@
+/* =========================================================================
+   CSS Variables – Forest Green + Amber Gold palette
+   ========================================================================= */
+:root {
+    --primary:       #2d6a4f;   /* deep forest green */
+    --primary-dark:  #1b4332;
+    --primary-light: #52b788;
+    --accent:        #e9b84a;   /* amber gold */
+    --accent-dark:   #c78f1e;
+    --bg:            #f8f5ee;   /* warm parchment */
+    --surface:       #ffffff;
+    --border:        #d4c9a8;
+    --text:          #2c2c2c;
+    --text-muted:    #6b6452;
+    --danger:        #c0392b;
+    --success:       #2d6a4f;
+}
+
+/* =========================================================================
+   Step 2: CSS Syntax and Comments
+   ========================================================================= */
+
+.cta-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* =========================================================================
+   Step 3: Selectors Playground
+   ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+#mainHeader {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+    padding: 40px 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle leaf texture overlay on header */
+#mainHeader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.eventCard {
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin: 10px;
+    background-color: var(--surface);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(45,106,79,0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.eventCard:hover {
+    box-shadow: 0 8px 24px rgba(45,106,79,0.18);
+    transform: translateY(-2px);
+}
+
+h3, p {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--primary-dark);
+    margin: 10px 0 6px;
+}
+
+/* =========================================================================
+   Step 4: Color & Background Styling
+   ========================================================================= */
+
+.highlight {
+    background-color: rgba(233, 184, 74, 0.35);
+    color: var(--primary-dark);
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+section h2 {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: none;
+}
+
+/* =========================================================================
+   Step 5: Typography
+   ========================================================================= */
+
+body {
+    font-family: 'Lato', 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+    background-repeat: repeat;
+}
+
+#mainHeader p {
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+}
+
+.eventCard p {
+    text-align: justify;
+    text-transform: capitalize;
+    letter-spacing: 0.4px;
+    line-height: 1.8;
+    font-size: 0.92em;
+    color: var(--text-muted);
+}
+
+/* =========================================================================
+   Step 6: Link and List Styling
+   ========================================================================= */
+
+a:link {
+    color: var(--primary);
+    text-decoration: none;
+}
+a:visited {
+    color: var(--primary-dark);
+}
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+a:active {
+    color: var(--danger);
+}
+
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+    padding: 12px 0;
+    border-bottom: 3px solid var(--accent);
+    gap: 4px;
+}
+
+nav ul li {
+    margin: 0 6px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+nav ul li:hover {
+    background-color: rgba(255,255,255,0.12);
+}
+
+nav ul li a:link, nav ul li a:visited {
+    color: #f0ebe0;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+nav ul li a:hover {
+    color: var(--accent) !important;
+    text-decoration: none;
+}
+
+/* =========================================================================
+   Step 7: Table Styling
+   ========================================================================= */
+
+.admin-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(27,67,50,0.12);
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #c9e0d2;
+    padding: 13px 16px;
+}
+
+.admin-table th {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    color: #f0ebe0;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.4px;
+}
+
+.admin-table td {
+    background-color: #f4fbf7;
+    color: var(--text);
+}
+
+.admin-table tr:nth-child(even) td {
+    background-color: #e4f4ec;
+}
+
+.admin-table tr:hover td {
+    background-color: #d0ece0;
+    transition: background-color 0.15s;
+}
+
+/* =========================================================================
+   Step 8: Box Model & Layout Control
+   ========================================================================= */
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.hidden-visibility {
+    visibility: hidden;
+}
+
+.hidden-display {
+    display: none;
+}
+
+/* =========================================================================
+   Step 9: Multiple Columns in Text
+   ========================================================================= */
+
+.news-article {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid var(--border);
+    margin: 20px;
+    text-align: justify;
+}
+
+/* =========================================================================
+   Step 10: Responsive Web Design
+   ========================================================================= */
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 95vw;
+}
+
+.eventCard {
+    width: 30%;
+    min-width: 250px;
+    min-height: 25vh;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.2s;
+}
+.gallery-img:hover {
+    border-color: var(--accent);
+}
+
+.gallery-img.enlarged {
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 20px rgba(45,106,79,0.4);
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    body {
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .eventCard {
+        width: 80%;
+    }
+    .news-article {
+        column-count: 1;
+    }
+}
+
+/* =========================================================================
+   Forms
+   ========================================================================= */
+
+form {
+    max-width: 520px;
+    margin: 20px auto;
+    padding: 28px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(45,106,79,0.1);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 0.9em;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95em;
+    background: #fafaf7;
+    transition: border-color 0.2s;
+}
+.form-group input:hover, .form-group select:hover, .form-group textarea:hover {
+    border-color: var(--primary-light);
+}
+
+section {
+    padding: 28px 20px;
+    border-bottom: 1px solid var(--border);
+    margin: 10px 0;
+}
+
+/* Spinner */
+.spinner {
+    border: 4px solid #e4f0ea;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Welcome banner overrides */
+#welcomeBanner {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Geo button */
+#geoBtn {
+    background-color: var(--accent);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95em;
+    transition: background-color 0.2s, transform 0.15s;
+}
+#geoBtn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+/* Clear prefs button */
+#clearPrefsBtn {
+    background-color: #e8e2d5;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+#clearPrefsBtn:hover {
+    background-color: var(--border);
+}
+
+/* Video section */
+#promo video {
+    border: 3px solid var(--primary-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(45,106,79,0.15);
+}
+
+/* Layout control test block */
+.layout-test-block {
+    background: #f0ebe0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+/* =========================================================================
+   Premium Footer
+   ========================================================================= */
+
+.site-footer {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #14332a 100%);
+    color: #e0ddd5;
+    padding: 60px 20px 20px;
+    margin-top: 60px;
+    font-family: 'Lato', sans-serif;
+    border-top: 4px solid var(--accent);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    color: #a8b8b0;
+    line-height: 1.7;
+    font-size: 0.92rem;
+}
+
+.footer-links, .footer-socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, .footer-socials li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-socials a {
+    color: #a8b8b0 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    font-size: 0.92em;
+}
+
+.footer-links a:hover, .footer-socials a:hover {
+    color: var(--accent) !important;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 28px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #6b826e;
+    font-size: 0.82rem;
+}
+
+/* =========================================================================
+   HTML Task 4: Image Gallery Table
+   ========================================================================= */
+
+.gallery-table {
+    width: 95%;
+    margin: 0 auto 10px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.gallery-table caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1em;
+    color: var(--primary-dark);
+    font-style: italic;
+    margin-bottom: 10px;
+    caption-side: top;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.gallery-table td {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(45,106,79,0.08);
+    vertical-align: top;
+}
+
+.img-caption {
+    font-size: 0.82em !important;
+    color: var(--text-muted) !important;
+    margin-top: 6px !important;
+    text-align: center;
+    font-style: italic;
+    text-transform: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-table, .gallery-table tbody, .gallery-table tr, .gallery-table td {
+        display: block;
+        width: 100%;
+    }
+    .gallery-table td {
+        margin-bottom: 12px;
+    }
+}
